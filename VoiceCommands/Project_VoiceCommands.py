@@ -29,7 +29,7 @@ def speak(audio):
     engine.runAndWait()
     
 def empty_spaces():
-    speak('Empty benches now is behind The N Building')
+    speak('Empty benches now are behind The N Building')
             
 # -------------- Def Of Function takeCommand To take Voice Command (Voice Input) From the user -----------
 def takeCommand():
@@ -109,9 +109,9 @@ if __name__ == '__main__':
     clear = lambda: os.system('cls')
     #--------------------------------#
     clear()
-    
+    speak("Here's M i u's  Robot , how can i help you?")
     while True:
-         
+        
         query = takeCommand().lower()
         assistant.request(query) 
             
