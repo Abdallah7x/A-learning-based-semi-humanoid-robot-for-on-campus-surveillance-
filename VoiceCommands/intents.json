@@ -2,7 +2,7 @@
   {
     "tag": "greeting",
     "patterns": ["Hey", "Hello", "Hi", "What's up?", "Good Day"],
-    "responses": ["hi","how are you"]
+    "responses": [""]
   },
   {
     "tag": "empty_spaces",
