@@ -29,5 +29,10 @@
     "tag": "cant_hear",
     "patterns": ["can't hear"],
     "responses": [""]
+  },
+  {
+    "tag": "cant_hear",
+    "patterns": ["can't hear"],
+    "responses": [""]
   }
 ]}
