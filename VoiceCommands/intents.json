@@ -6,23 +6,26 @@
   },
   {
     "tag": "empty_spaces",
-    "patterns": ["i want to seat please", "empty spaces","find empty spaces","can you find empty space","benches","Disks","Desks","find empty benches"],
+    "patterns": ["i want to seat please",
+    "empty spaces","find empty spaces",
+    "can you find empty space","benches","Disks","Desks","find empty beches"],
     "responses": [""]
   },
   {
     "tag": "empty_rooms",
-    "patterns": ["empty room", "empty class","empty lab","can you find room"],
+    "patterns": ["empty room", "empty class","empty lab","can you find room","room"],
     "responses": [""]
   },
   {
     "tag": "find_doctor",
-    "patterns": ["where is dr", "can you find dr","can you find doctor","where is doctor","doctor",
+    "patterns": ["where is dr", "can you find dr",
+    "can you find doctor","where is doctor","doctor",
     "doctor schedule","dr schedule"],
     "responses": [""]
   },
   {
     "tag": "exit",
-    "patterns": ["Bye", "See you", "Quit", "Exit","Thank you"],
+    "patterns": ["Bye", "See you", "Quit", "Exit","Thank you","goodbye"],
     "responses": [""]
   },
   {
@@ -30,7 +33,7 @@
     "patterns": ["can't hear"],
     "responses": [""]
   },
-  {
+   {
      "tag": "find_student",
      "patterns": ["where is my schedule","please find my schedule",
      "my schedule"],
