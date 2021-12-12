@@ -20,7 +20,7 @@ engine.setProperty(engine.getProperty('volume'),1.0)
 engine.setProperty('rate', 150)     # setting up new voice rate
 rate = engine.getProperty('rate')
 
-todo_list =['Go to shopping','Clean Room','Record Vidio']
+
 
 recognizer = speech_recognition.Recognizer()
 # ---------- Def OF function speak to boost the coding progress ----------
@@ -47,6 +47,7 @@ def takeCommand():
         print("Recognizing...")   
         query = r.recognize_google(audio, language ='en-US')
         print(f"User said: {query}\n")
+        
   
     except Exception as e:
         print(e)   
@@ -88,24 +89,21 @@ def out():
     
 def find_student():
     speak('Searching For your Schedule...')
-    
-    
-    
     im = cv2.imread('table.png')
     cv2.imshow('table',im)
     speak('Here is your schedule..')
     cv2.waitKey(0)
     cv2.destroyAllWindows()
     
+    
 mapings ={"greeting":hello ,
           "empty_spaces": empty_spaces , 
-          "empty_rooms":empty_rooms,
+          "empty_rooms":empty_rooms ,
           "find_doctor":find_doctor ,
-          "exit": out,
-          "cant_hear":cant_hear,
-          "find_studnet":find_student
+          "exit": out ,
+          "cant_hear":cant_hear ,
+          "find_student":find_student
           }
-
 
 
 
