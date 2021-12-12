@@ -86,6 +86,16 @@ def out():
     speak("Goodbye , Thanks for your time!")
     sys.exit(0)
     
+def find_student():
+    speak('Searching For your Schedule...')
+    
+    
+    
+    im = cv2.imread('table.png')
+    cv2.imshow('table',im)
+    speak('Here is your schedule..')
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
     
 mapings ={"greeting":hello ,
           "empty_spaces": empty_spaces , 
