@@ -31,8 +31,9 @@
     "responses": [""]
   },
   {
-    "tag": "cant_hear",
-    "patterns": ["can't hear"],
-    "responses": [""]
-  }
+     "tag": "find_student",
+     "patterns": ["where is my schedule","please find my schedule",
+     "my schedule","my room","my lab"],
+     "responses": [""]
+   }
 ]}
