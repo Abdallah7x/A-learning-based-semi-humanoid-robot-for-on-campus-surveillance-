@@ -6,7 +6,7 @@
   },
   {
     "tag": "empty_spaces",
-    "patterns": ["i want to seat please", "empty spaces","find empty spaces","can you find empty space"],
+    "patterns": ["i want to seat please", "empty spaces","find empty spaces","can you find empty space","benches"],
     "responses": [""]
   },
   {
