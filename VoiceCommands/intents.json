@@ -17,7 +17,7 @@
   {
     "tag": "find_doctor",
     "patterns": ["where is dr", "can you find dr","can you find doctor","where is doctor","doctor",
-    "doctor schedule"],
+    "doctor schedule","dr schedule"],
     "responses": [""]
   },
   {
