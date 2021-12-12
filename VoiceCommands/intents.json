@@ -33,7 +33,7 @@
   {
      "tag": "find_student",
      "patterns": ["where is my schedule","please find my schedule",
-     "my schedule","my room","my lab"],
+     "my schedule"],
      "responses": [""]
    }
 ]}
