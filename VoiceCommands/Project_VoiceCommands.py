@@ -102,7 +102,10 @@ mapings ={"greeting":hello ,
           "empty_rooms":empty_rooms,
           "find_doctor":find_doctor ,
           "exit": out,
-          "cant_hear":cant_hear}
+          "cant_hear":cant_hear,
+          "find_studnet":find_student
+          }
+
 
 
 
