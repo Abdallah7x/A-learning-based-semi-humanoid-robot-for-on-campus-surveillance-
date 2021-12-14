@@ -7,6 +7,61 @@ import numpy as np
 from time import sleep
 
 
+
+def imagename():
+    vid = cv2.VideoCapture(0)
+  
+cam = cv2.VideoCapture(0)
+
+cv2.namedWindow("test")
+
+img_counter = 0
+cascPath=os.path.dirname(cv2.__file__)+"/data/haarcascade_frontalface_default.xml"
+faceCascade = cv2.CascadeClassifier(cascPath)
+
+while True:
+    ret, frame = cam.read()
+    if not ret:
+        print("failed to grab frame")
+        break
+    
+
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+    faces = faceCascade.detectMultiScale(
+        gray,
+        scaleFactor=1.1,
+        minNeighbors=5,
+        minSize=(30, 30),
+        flags=cv2.CASCADE_SCALE_IMAGE
+    )
+
+    # Draw a rectangle around the faces
+    for (x, y, w, h) in faces:
+        cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 0, 0), 2)
+
+    # Display the resulting frame
+    cv2.imshow("test", frame)
+
+    k = cv2.waitKey(1)
+    if k%256 == 27:
+        # ESC pressed
+        print("Escape hit, closing...")
+        break
+    elif k%256 == 32:
+        # SPACE pressed
+        img_name = "opencv_frame_{}.png".format(img_counter)
+        cv2.imwrite(img_name, frame)
+        x=img_name
+        
+        print("{} written!".format(img_name))
+        img_counter += 1
+
+cam.release()
+
+cv2.destroyAllWindows()
+
+
 def get_encoded_faces():
     """
 
@@ -65,12 +120,16 @@ def rec_face(im):
             # Draw box
 
         for (top, right, bottom, left), name in zip(face_locations, face_names):
-            cv2.rectangle(img, (left-20, top-20), (right+20, bottom+20), (0, 255, 255), 2)
-
+# =============================================================================
+#             cv2.rectangle(img, (left-20, top-20), (right+20, bottom+20), (0, 255, 255), 2)
+# 
+# =============================================================================
             # Draw label 
-            cv2.rectangle(img, (left-20, bottom -15), (right+60, bottom+20), (0, 255, 255), cv2.FILLED)
+            cv2.rectangle(img, (left-20, bottom -15), (right+60, bottom+20), (0, 0, 0), cv2.FILLED)
             font = cv2.FONT_HERSHEY_DUPLEX
             cv2.putText(img, name, (left -20, bottom + 15), font, 1.0, (255, 255, 255), 2)
+            print(name)
+
 
 
     x=True
@@ -84,12 +143,7 @@ def rec_face(im):
         
         
 if __name__ == "__main__": 
-     
-    directory = "C:/Users/Dell/Desktop/Grad/face_rec/testing"
-    files = os.listdir(directory)
-    for file in files:
-        print(directory+'/'+file)
-        print(rec_face(directory+'/'+file))
+    print(rec_face(img_name))
 
         
  
