@@ -1,10 +1,17 @@
+import sys
+sys.path.insert(0, 'E:/CS/Graduation Project/-A-learning-based-semi-Humanoid-Robot-for-On-campus-Surveillance-main/VoiceCommands')
+import Project_VoiceCommands as vc
+
+# Python program to read an excel file
+# import openpyxl module
+import openpyxl
 def ReadFileData_Day (Path , Day ):
     
-    import openpyxl
+    
     
     # Give the location of the file
     try :
-        path = "E:/CS/Graduation Project/StudentsData/" +Path+".xlsx"
+        path = "StudentsData/" +Path+".xlsx"
     
     except (FileNotFoundError, IOError):
         print("Wrong file or file path")
@@ -71,13 +78,10 @@ def ReadFileData_Day (Path , Day ):
         
 def ReadFileData_Time (Path , Day, Time ):
     
-    # Python program to read an excel file
-    # import openpyxl module
-    import openpyxl
     
     # Give the location of the file
     try :
-        path = "E:/CS/Graduation Project/StudentsData/" +Path+".xlsx"
+        path = "E:/CS/Graduation Project/-A-learning-based-semi-Humanoid-Robot-for-On-campus-Surveillance-main/StudentsData/" +Path+".xlsx"
     
     except (FileNotFoundError, IOError):
         print("Wrong file or file path")
@@ -171,19 +175,25 @@ def ReadFileData_Time (Path , Day, Time ):
                 print ("Start In "+Starting[i])
                 print ("End In "+Ending[i])
                 print("Room"+Room[i])
+                vc.speak("You are Busy At This Time Having :-")
+                vc.speak(CourseName[i])
+                vc.speak ("Starts In "+Starting[i])
+                vc.speak ("Ends In "+Ending[i])
+                vc.speak("Room"+Room[i])
                 break
             
             
     if Flag==False: 
         print("You don't Have Lectures at this time ")
+        vc.speak("You don't Have Lectures at this time ")
             
     
         
 
 if __name__ == '__main__':
     Name="Pierre Malak"
-    day="Monday"
-    time ="19"
-   # ReadFileData_Day(Name ,day)
+    day="Sunday"
+    time ="17"
+    #ReadFileData_Day(Name ,day)
       
     ReadFileData_Time(Name , day, time)
