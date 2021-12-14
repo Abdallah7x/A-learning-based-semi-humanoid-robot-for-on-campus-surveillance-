@@ -114,8 +114,7 @@ assistant.save_model()
             
 
             
-                       
-if __name__ == '__main__':
+def begin():
     # ---------- This Function clear will clean any command before execution of this python file------
     clear = lambda: os.system('cls')
     #--------------------------------#
@@ -125,6 +124,12 @@ if __name__ == '__main__':
         
         query = takeCommand().lower()
         assistant.request(query) 
+            
+            
+                       
+if __name__ == '__main__':
+    
+   # begin()
             
              
                 
