@@ -95,6 +95,22 @@ def find_student():
     cv2.waitKey(0)
     cv2.destroyAllWindows()
     
+def find_Day():
+    
+    speak("Tell The day You want to know")
+    # Day=input(takeCommand().capitalize())
+    # speak("I will Print It to you on the screen")
+    # ExR.ReadFileData_Day("Pierre Malak", Day)
+    # #cv2.waitKey(0)
+    
+def find_Time():
+    
+    speak("Tell Me The Day ")
+    # Day=input(takeCommand().capitalize())
+    # speak(" The System will detect The time in 24 hours format")
+    # speak(" Tell me the time in format of 24 hours ")
+    # Time=input(takeCommand().lower)
+    # ExR.ReadFileData_Time("Pierre Malak", Day, Time)
     
 mapings ={"greeting":hello ,
           "empty_spaces": empty_spaces , 
@@ -102,8 +118,12 @@ mapings ={"greeting":hello ,
           "find_doctor":find_doctor ,
           "exit": out ,
           "cant_hear":cant_hear ,
-          "find_student":find_student
+          "find_student":find_student,
+          "find_Day":find_Day,
+          "find_Time": find_Time
           }
+
+          
 
 
 
