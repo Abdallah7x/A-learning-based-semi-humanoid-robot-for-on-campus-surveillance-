@@ -38,5 +38,15 @@
      "patterns": ["where is my schedule","please find my schedule",
      "my schedule"],
      "responses": [""]
-   }
+   },
+    {
+      "tag": "find_Day",
+      "patterns": ["tell me my lecture on","tell me my lectures on","day","specific day"],
+      "responses": [""]
+    },
+     {
+       "tag": "find_Time",
+       "patterns": ["busy","time","tell me if i am busy","is i am busy on"],
+       "responses": [""]
+     }
 ]}
