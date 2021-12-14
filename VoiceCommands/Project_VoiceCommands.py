@@ -139,7 +139,12 @@ def begin():
     clear = lambda: os.system('cls')
     #--------------------------------#
     clear()
-    speak("Here's M i u's  Robot , how can i help you?")
+    img=face_rec.img_name()
+    Name=face_rec.rec_face(img)
+    #print(img)
+    engine.say("Hello "+Name)
+    engine.runAndWait()
+    speak("Here's M i u's  Robot , how can i help you ?")
     while True:
         
         query = takeCommand().lower()
