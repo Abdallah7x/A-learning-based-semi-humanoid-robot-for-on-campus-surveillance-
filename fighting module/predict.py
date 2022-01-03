@@ -145,35 +145,3 @@ def process_alldata_validation():
         target.append(np.array(i[1]))
         
     return data, target
-
-
-def process_alldata_training():
-    
-    joint_transfer=[]
-    frames_num=20
-    count = 0
-    
-    with h5py.File('prueba.h5', 'r') as f:
-            
-        X_batch = f['data'][:]
-        y_batch = f['labels'][:]
-
-    for i in range(int(len(X_batch)/frames_num)):
-        inc = count+frames_num
-        joint_transfer.append([X_batch[count:inc],y_batch[count]])
-        count =inc
-        
-    data =[]
-    target=[]
-    
-    for i in joint_transfer:
-        data.append(i[0])
-        target.append(np.array(i[1]))
-        
-    return data, target
-print(names_validation[0])
-data_val, target_val = process_alldata_validation()
-
-y_pred = mymodel.predict(np.array(data_val))
-print(y_pred[29])
-
