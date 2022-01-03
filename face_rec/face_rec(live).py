@@ -91,5 +91,12 @@ if __name__ == "__main__":
         print(directory+'/'+file)
         print(rec_face(directory+'/'+file))
 
-        
+           x=True
+    while x==True:
+
+        cv2.imshow('face', img)
+        if cv2.waitKey(0) & 0xFF == ord('q'):
+            return face_names 
+        x=False
+        cv2.destroyAllWindows()
  
