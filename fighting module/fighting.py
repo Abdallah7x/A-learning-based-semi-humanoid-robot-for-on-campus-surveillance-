@@ -19,7 +19,7 @@ import keras
 from keras import metrics
 from mydata import *
 
-class machine():
+class fighting_module():
     
 
     chunk_size = 4096
