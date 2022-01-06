@@ -20,7 +20,7 @@ import keras
 from keras import metrics
 
 
-class mydata:
+class video_processing:
     in_dir = "data"
     
     img_size = 224
