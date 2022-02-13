@@ -7,70 +7,112 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool _initialValue = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.red.shade800,
+      ),
       body: Align(
         alignment: Alignment.centerLeft,
         child: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints constraints) {
-            var data = "Navigation";
-            return Row(
-              children: [
-                Column(
-                  children: [
-                    Container(
-                      width: 500,
-                      child: Column(
-                        children: [
-                          Image.asset(
-                            "assets/logo/pp.jpg",
-                            height: 670,
-                            width: 800,
-                          )
-                        ],
+            return Container(
+              child: Row(
+                children: [
+                  Column(
+                    children: [
+                      Image.asset(
+                        "assets/logo/pp.jpg",
+                        height: 670,
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(width: 200),
-                Column(
-                  children: [
-                    SizedBox(height: 50),
-                    Container(
-                      alignment: Alignment.center,
-                      width: MediaQuery.of(context).size.width / 4,
-                      height: MediaQuery.of(context).size.height / 4,
-                      decoration: BoxDecoration(
-                          color: Colors.grey.shade300,
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.all(Radius.circular(25))),
-                      margin: EdgeInsets.only(right: 8, top: 8),
-                      child: Image.asset(
-                        "assets/images/nav.jpg",
+                    ],
+                  ),
+                  SizedBox(
+                    width: 70,
+                  ),
+                  Column(
+                    children: [
+                      GestureDetector(
+                          onTap: () {},
+                          child: Container(
+                            alignment: Alignment.center,
+                            width: MediaQuery.of(context).size.width / 4,
+                            height: MediaQuery.of(context).size.height / 4,
+                            decoration: BoxDecoration(
+                                color: Colors.grey.shade300,
+                                shape: BoxShape.rectangle,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(25))),
+                            margin: EdgeInsets.only(right: 80, top: 45),
+                            child: Image.asset(
+                              "assets/images/schedules.jpg",
+                            ),
+                          )),
+                      SizedBox(
+                        height: 120,
                       ),
-                    ),
-                    SizedBox(height: 100),
-                    Container(
-                      alignment: Alignment.center,
-                      width: MediaQuery.of(context).size.width / 4,
-                      height: MediaQuery.of(context).size.height / 4,
-                      decoration: BoxDecoration(
-                          color: Colors.grey.shade300,
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.all(Radius.circular(25))),
-                      margin: EdgeInsets.only(right: 8, top: 8),
-                      child: Image.asset(
-                        "assets/images/schedules.jpg",
+                      GestureDetector(
+                          onTap: () {},
+                          child: Container(
+                            alignment: Alignment.center,
+                            width: MediaQuery.of(context).size.width / 4,
+                            height: MediaQuery.of(context).size.height / 4,
+                            decoration: BoxDecoration(
+                                color: Colors.grey.shade300,
+                                shape: BoxShape.rectangle,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(25))),
+                            margin: EdgeInsets.only(right: 80, top: 8),
+                            child: Image.asset(
+                              "assets/images/nav.jpg",
+                            ),
+                          )),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      GestureDetector(
+                          onTap: () {},
+                          child: Container(
+                            alignment: Alignment.center,
+                            width: MediaQuery.of(context).size.width / 4,
+                            height: MediaQuery.of(context).size.height / 4,
+                            decoration: BoxDecoration(
+                                color: Colors.grey.shade300,
+                                shape: BoxShape.rectangle,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(25))),
+                            margin: EdgeInsets.only(right: 8, top: 45),
+                            child: Image.asset(
+                              "assets/images/picture.jpg",
+                            ),
+                          )),
+                      SizedBox(
+                        height: 120,
                       ),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [],
-                )
-              ],
+                      // GestureDetector(
+                      //     onTap: () {},
+                      //     child: Container(
+                      //       alignment: Alignment.center,
+                      //       width: MediaQuery.of(context).size.width / 4,
+                      //       height: MediaQuery.of(context).size.height / 4,
+                      //       decoration: BoxDecoration(
+                      //           color: Colors.grey.shade300,
+                      //           shape: BoxShape.rectangle,
+                      //           borderRadius:
+                      //               BorderRadius.all(Radius.circular(25))),
+                      //       margin: EdgeInsets.only(right: 8, top: 8),
+                      //       child: Image.asset(
+                      //         "assets/images/nav.jpg",
+                      //       ),
+                      //     )),
+                    ],
+                  )
+                ],
+              ),
             );
           },
         ),
