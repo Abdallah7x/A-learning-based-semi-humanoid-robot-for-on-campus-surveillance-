@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:tablet/pages/Navigation.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -80,7 +81,13 @@ class _HomePageState extends State<HomePage> {
                           height: 20,
                         ),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => navigation()),
+                            );
+                          },
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
