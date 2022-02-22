@@ -39,25 +39,30 @@ class _HomePageState extends State<HomePage> {
                     Column(
                       children: [
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => navigation()),
+                            );
+                          },
                           child: Column(
                             children: [
+                              SizedBox(
+                                height: 20,
+                              ),
                               Row(
                                 children: [
-                                  Container(
-                                    alignment: Alignment.center,
-                                    width:
-                                        MediaQuery.of(context).size.width / 4,
-                                    height:
-                                        MediaQuery.of(context).size.height / 4,
-                                    decoration: BoxDecoration(
-                                        color: Colors.grey.shade300,
-                                        shape: BoxShape.rectangle,
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(25))),
-                                    margin: EdgeInsets.only(right: 80, top: 45),
-                                    child: Image.asset(
-                                      "assets/images/schedules.jpg",
+                                  Center(
+                                    child: ClayContainer(
+                                      color: Color(0xFFF2F2F2),
+                                      height: 200,
+                                      width: 210,
+                                      borderRadius: 50,
+                                      child: Image.asset(
+                                        "assets/images/schedules.jpg",
+                                        fit: BoxFit.fill,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -66,6 +71,101 @@ class _HomePageState extends State<HomePage> {
                                 children: [
                                   Text(
                                     'View schedule',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        fontSize: 35.0,
+                                        fontFamily: 'Roboto',
+                                        color: Colors.grey),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => navigation()),
+                            );
+                          },
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Center(
+                                    child: ClayContainer(
+                                      color: Color(0xFFF2F2F2),
+                                      height: 200,
+                                      width: 210,
+                                      borderRadius: 50,
+                                      child: Image.asset(
+                                        "assets/images/nav.jpg",
+                                        fit: BoxFit.fill,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Text(
+                                    'Navigation',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        fontSize: 35.0,
+                                        fontFamily: 'Roboto',
+                                        color: Colors.grey),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      width: 150,
+                    ),
+                    Column(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => navigation()),
+                            );
+                          },
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Row(
+                                children: [
+                                  Center(
+                                    child: ClayContainer(
+                                      color: Color(0xFFF2F2F2),
+                                      height: 200,
+                                      width: 210,
+                                      borderRadius: 50,
+                                      child: Image.asset(
+                                        "assets/images/picture.jpg",
+                                        fit: BoxFit.fill,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Text(
+                                    'Take picture',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         fontSize: 35.0,
@@ -89,86 +189,38 @@ class _HomePageState extends State<HomePage> {
                             );
                           },
                           child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Container(
-                                alignment: Alignment.center,
-                                width: MediaQuery.of(context).size.width / 4,
-                                height: MediaQuery.of(context).size.height / 4,
-                                decoration: BoxDecoration(
-                                    color: Colors.grey.shade300,
-                                    shape: BoxShape.rectangle,
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(25))),
-                                margin: EdgeInsets.only(right: 80, top: 45),
-                                child: Image.asset(
-                                  "assets/images/nav.jpg",
-                                ),
+                              Row(
+                                children: [
+                                  Center(
+                                    child: ClayContainer(
+                                      color: Color(0xFFF2F2F2),
+                                      height: 200,
+                                      width: 210,
+                                      borderRadius: 50,
+                                      child: Image.asset(
+                                        "assets/images/t.jpg",
+                                        fit: BoxFit.fill,
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
-                              Text(
-                                'Campus Navigation',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontSize: 35.0,
-                                    fontFamily: 'Roboto',
-                                    color: Colors.grey),
+                              Row(
+                                children: [
+                                  Text(
+                                    'Ticket history',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        fontSize: 35.0,
+                                        fontFamily: 'Roboto',
+                                        color: Colors.grey),
+                                  ),
+                                ],
                               )
                             ],
                           ),
                         ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        GestureDetector(
-                          onTap: () {},
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                alignment: Alignment.center,
-                                width: MediaQuery.of(context).size.width / 4,
-                                height: MediaQuery.of(context).size.height / 4,
-                                decoration: BoxDecoration(
-                                    color: Colors.grey.shade300,
-                                    shape: BoxShape.rectangle,
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(25))),
-                                margin: EdgeInsets.only(right: 80, top: 45),
-                                child: Image.asset(
-                                  "assets/images/picture.jpg",
-                                ),
-                              ),
-                              Text(
-                                'Take a picture',
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                    fontSize: 35.0,
-                                    fontFamily: 'Roboto',
-                                    color: Colors.grey),
-                              )
-                            ],
-                          ),
-                        ),
-
-                        // GestureDetector(
-                        //     onTap: () {},
-                        //     child: Container(
-                        //       alignment: Alignment.center,
-                        //       width: MediaQuery.of(context).size.width / 4,
-                        //       height: MediaQuery.of(context).size.height / 4,
-                        //       decoration: BoxDecoration(
-                        //           color: Colors.grey.shade300,
-                        //           shape: BoxShape.rectangle,
-                        //           borderRadius:
-                        //               BorderRadius.all(Radius.circular(25))),
-                        //       margin: EdgeInsets.only(right: 8, top: 8),
-                        //       child: Image.asset(
-                        //         "assets/images/nav.jpg",
-                        //       ),
-                        //     )),
                       ],
                     )
                   ],
