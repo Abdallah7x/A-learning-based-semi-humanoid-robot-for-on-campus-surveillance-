@@ -12,15 +12,28 @@ class _searchState extends State<search> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("search"),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.search),
-            onPressed: () {
-              showSearch(context: context, delegate: CustomSearch());
-            },
-          )
-        ],
+        centerTitle: true,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Title(color: Colors.white, child: Text("Search")),
+            IconButton(
+              icon: const Icon(Icons.search),
+              onPressed: () {
+                showSearch(context: context, delegate: CustomSearch());
+              },
+            ),
+          ],
+        ),
+        // actions: [
+        //   IconButton(
+
+        //     icon: const Icon(Icons.search),
+        //     onPressed: () {
+        //       showSearch(context: context, delegate: CustomSearch());
+        //     },
+        //   )
+        // ],
       ),
     );
   }
