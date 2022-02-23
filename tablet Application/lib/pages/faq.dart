@@ -1,6 +1,12 @@
+
 import 'package:flutter/material.dart';
 
-class FAQ extends StatelessWidget {
+class FAQ extends StatefulWidget {
+  @override
+  _FAQState createState() => _FAQState();
+}
+
+class _FAQState extends State<FAQ> {
   final List quotes = [
     {
       "quote":
@@ -61,29 +67,40 @@ class FAQ extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      padding: const EdgeInsets.all(8),
-      itemCount: quotes.length,
-      itemBuilder: (BuildContext context, int index) {
-        return _buildExpandableTile(quotes[index]);
-      },
-      separatorBuilder: (BuildContext context, int index) => const Divider(),
-    );
-  }
-
-  Widget _buildExpandableTile(item) {
-    return ExpansionTile(
-      title: Text(
-        item['author'],
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.red.shade800,
+        title: Text("frequently asked questions"),
       ),
-      children: <Widget>[
-        ListTile(
-          title: Text(
-            item['quote'],
-            style: TextStyle(fontWeight: FontWeight.w700),
-          ),
-        )
-      ],
+      body: Align(
+        alignment: Alignment.centerLeft,
+        child: ListView.separated(
+          padding: const EdgeInsets.all(8),
+          itemCount: quotes.length,
+          itemBuilder: (BuildContext context, int index) {
+            return _buildExpandableTile(quotes[index]);
+          },
+          separatorBuilder: (BuildContext context, int index) =>
+              const Divider(),
+        ),
+      ),
     );
   }
+}
+
+Widget _buildExpandableTile(item) {
+  return ExpansionTile(
+    title: Text(
+      item['author'],
+    ),
+    children: <Widget>[
+      ListTile(
+        title: Text(
+          item['quote'],
+          style: TextStyle(fontWeight: FontWeight.w700),
+        ),
+      )
+    ],
+  );
 }
