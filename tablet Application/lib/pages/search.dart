@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_search_bar/flutter_search_bar.dart';
 
 class search extends StatefulWidget {
   @override
@@ -12,6 +11,7 @@ class _searchState extends State<search> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.red.shade800,
         centerTitle: true,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -40,7 +40,16 @@ class _searchState extends State<search> {
 }
 
 class CustomSearch extends SearchDelegate {
-  List<String> allData = ['Navigation', 'schedule'];
+  List<String> allData = [
+    'Navigation',
+    'schedule',
+    'selfie',
+    'navigate',
+    'Rate',
+    'rating'
+  ];
+  List<String> sugg = ['Navigation', 'schedule'];
+
   @override
   List<Widget>? buildActions(BuildContext context) {
     return [
@@ -82,7 +91,7 @@ class CustomSearch extends SearchDelegate {
   @override
   Widget buildSuggestions(BuildContext context) {
     List<String> matchQuery = [];
-    for (var item in allData) {
+    for (var item in sugg) {
       if (item.toLowerCase().contains(query.toLowerCase())) {
         matchQuery.add(item);
       }

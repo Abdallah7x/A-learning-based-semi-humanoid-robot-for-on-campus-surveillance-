@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:tablet/pages/Navigation.dart';
 import 'package:clay_containers/clay_containers.dart';
+import 'package:tablet/pages/picture.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -139,8 +140,7 @@ class _HomePageState extends State<HomePage> {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => navigation()),
+                            MaterialPageRoute(builder: (context) => picture()),
                           );
                         },
                         child: Column(

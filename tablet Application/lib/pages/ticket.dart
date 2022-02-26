@@ -86,7 +86,7 @@
 //                     agree = value ?? false;
 //                   });
 //                 },
-//                 activeColor: Colors.red,
+//                 activeColor: Colors.red.shade800,
 //               ),
 //             ),
 //             Text(

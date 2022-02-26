@@ -115,7 +115,7 @@ class _SortablePage2State extends State<SortablePage2> {
       contentPadding: EdgeInsets.only(top: 10.0),
       title: CircleAvatar(
         radius: 65,
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.red.shade800,
         child: Padding(
           padding: const EdgeInsets.all(4), // Border radius
           child: ClipOval(child: Image.asset('assets/logo/miul.png')),

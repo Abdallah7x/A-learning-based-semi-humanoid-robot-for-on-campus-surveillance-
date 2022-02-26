@@ -22,7 +22,7 @@ class TabBarWidget extends StatelessWidget {
             flexibleSpace: Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Colors.purple, Colors.red],
+                  colors: [Colors.purple, Colors.red.shade800],
                   begin: Alignment.bottomRight,
                   end: Alignment.topLeft,
                 ),

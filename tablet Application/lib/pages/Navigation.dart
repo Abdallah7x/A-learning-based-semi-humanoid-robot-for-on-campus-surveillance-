@@ -53,7 +53,7 @@ class _navigationState extends State<navigation> {
       child: Scaffold(
         appBar: AppBar(
           title: Text("Campus Navigation"),
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.red.shade800,
         ),
         body: Column(
           children: [
@@ -134,7 +134,7 @@ class _navigationState extends State<navigation> {
                 );
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.red,
+                primary: Colors.red.shade800,
                 padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
               ),
             ),

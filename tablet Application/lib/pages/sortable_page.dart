@@ -1,7 +1,11 @@
 import 'package:tablet/data/users.dart';
 import 'package:tablet/model/user.dart';
+import 'package:tablet/pages/ticket.dart';
 import 'package:tablet/widget/scrollable_widget.dart';
 import 'package:flutter/material.dart';
+import '../main.dart';
+import 'Navigation.dart';
+import 'package:flutter_ticket_widget/flutter_ticket_widget.dart';
 
 class SortablePage extends StatefulWidget {
   @override
@@ -12,7 +16,7 @@ class _SortablePageState extends State<SortablePage> {
   late List<User> users;
   int? sortColumnIndex;
   bool isAscending = false;
-   void _doSomething() {
+  void _doSomething() {
     showAlertDialog(context);
   }
 
@@ -62,8 +66,11 @@ class _SortablePageState extends State<SortablePage> {
         return DataRow(cells: getCells(cells));
       }).toList();
 
-  List<DataCell> getCells(List<dynamic> cells) =>
-      cells.map((data) => DataCell(Text('$data'))).toList();
+  List<DataCell> getCells(List<dynamic> cells) => cells
+      .map((data) => DataCell(Text('$data'), onTap: () {
+            _doSomething();
+          }))
+      .toList();
 
   void onSort(int columnIndex, bool ascending) {
     if (columnIndex == 0) {
@@ -88,8 +95,7 @@ class _SortablePageState extends State<SortablePage> {
 
   int compareString(bool ascending, String value1, String value2) =>
       ascending ? value1.compareTo(value2) : value2.compareTo(value1);
-  
-  
+
   showAlertDialog(BuildContext context) {
     Widget okButton = TextButton(
       child: Text("Add to log file"),
@@ -107,11 +113,14 @@ class _SortablePageState extends State<SortablePage> {
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(32.0))),
       contentPadding: EdgeInsets.only(top: 10.0),
-      title: Center(
-          child: Text(
-        'Student Ticket',
-        style: TextStyle(color: Colors.black.withOpacity(0.6)),
-      )),
+      title: CircleAvatar(
+        radius: 65,
+        backgroundColor: Colors.red.shade800,
+        child: Padding(
+          padding: const EdgeInsets.all(4), // Border radius
+          child: ClipOval(child: Image.asset('assets/logo/miul.png')),
+        ),
+      ),
       content: Row(
         children: [
           SizedBox(
@@ -119,15 +128,12 @@ class _SortablePageState extends State<SortablePage> {
           ),
           Column(
             children: [
-              SizedBox(
-                height: 65,
-              ),
               Container(
                 margin: const EdgeInsets.all(15.0),
                 padding: const EdgeInsets.all(3.0),
                 child: FlutterTicketWidget(
-                  width: 280.0,
-                  height: 400.0,
+                  width: 320.0,
+                  height: 415.0,
                   isCornerRounded: true,
                   child: Padding(
                     padding: const EdgeInsets.all(20.0),
@@ -137,25 +143,10 @@ class _SortablePageState extends State<SortablePage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
-                            Container(
-                              width: 120.0,
-                              height: 25.0,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30.0),
-                                border:
-                                    Border.all(width: 1.0, color: Colors.green),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  'Business Class',
-                                  style: TextStyle(color: Colors.green),
-                                ),
-                              ),
-                            ),
                             Row(
                               children: <Widget>[
                                 Text(
-                                  'SLM',
+                                  'MIU',
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold),
@@ -170,7 +161,7 @@ class _SortablePageState extends State<SortablePage> {
                                 Padding(
                                   padding: const EdgeInsets.only(left: 8.0),
                                   child: Text(
-                                    'BTL',
+                                    'university',
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold),
@@ -183,7 +174,7 @@ class _SortablePageState extends State<SortablePage> {
                         Padding(
                           padding: const EdgeInsets.only(top: 20.0),
                           child: Text(
-                            'Flight Ticket',
+                            'Student Ticket',
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 20.0,
@@ -195,15 +186,15 @@ class _SortablePageState extends State<SortablePage> {
                           child: Column(
                             children: <Widget>[
                               ticketDetailsWidget(
-                                  'Passengers', 'Ilona', 'Date', '24-12-2018'),
+                                  'Name', 'Seif Ahmed', 'Date', '20-2-2022'),
                               Padding(
                                 padding: const EdgeInsets.only(
                                     top: 12.0, right: 40.0),
                                 child: ticketDetailsWidget(
-                                    'Flight', '76836A45', 'Gate', '66B'),
+                                    'Type', 'Smoking indoors', 'Time', '1:32'),
                               ),
                               SizedBox(
-                                height: 15,
+                                height: 30,
                               ),
                               ClipRRect(
                                 borderRadius:
@@ -299,56 +290,3 @@ class _SortablePageState extends State<SortablePage> {
     );
   }
 }
-
-//   AlertDialog alert = AlertDialog(
-//       title: Center(child: Text('Student Ticket')),
-//       content: Row(
-//         children: [
-//           Container(
-//             height: 400,
-//             width: 370,
-//             child: Image.asset(
-//               "assets/images/ss.jpeg",
-//               fit: BoxFit.fill,
-//             ),
-//           ),
-//           Column(
-//             children: [
-//               SizedBox(
-//                 height: 130,
-//               ),
-//               Text("student name: Seif Ahmed"),
-//               Text("student ID: 2018/1xxx"),
-//               SizedBox(
-//                 height: 30,
-//               ),
-//               Text("Ticket type:  Smoking"),
-//               SizedBox(
-//                 height: 5,
-//               ),
-//               Text("Ticket Date: 20/2/2022"),
-//               SizedBox(
-//                 height: 5,
-//               ),
-//               Text("Ticket time:2:32 PM"),
-//               SizedBox(
-//                 width: 500,
-//               ),
-//             ],
-//           ),
-//         ],
-//       ),
-//       actions: [
-//         okButton,
-//       ],
-//     );
-
-//     // show the dialog
-//     showDialog(
-//       context: context,
-//       builder: (BuildContext context) {
-//         return alert;
-//       },
-//     );
-// }
-// }

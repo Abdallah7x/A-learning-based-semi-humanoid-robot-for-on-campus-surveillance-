@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tablet/pages/rating.dart';
 import 'package:tablet/pages/search.dart';
 
 import 'HomePage.dart';
@@ -15,7 +16,7 @@ class _NavState extends State<Nav> {
     HomePage(),
     search(),
     FAQ(),
-    Text('kk Screen'),
+    ReviewsDemo(),
   ];
 
   void _onItemTap(int index) {
@@ -36,24 +37,24 @@ class _NavState extends State<Nav> {
           backgroundColor: Colors.transparent,
           selectedFontSize: 22,
           unselectedFontSize: 15,
-          selectedItemColor: Colors.red,
+          selectedItemColor: Colors.red.shade800,
           items: [
             BottomNavigationBarItem(
                 icon: Icon(Icons.home),
-                title: Text("Home"),
-                backgroundColor: Colors.red),
+                label: "Home",
+                backgroundColor: Colors.red.shade800),
             BottomNavigationBarItem(
                 icon: Icon(Icons.search),
-                title: Text("search"),
-                backgroundColor: Colors.red),
+                label: "search",
+                backgroundColor: Colors.red.shade800),
             BottomNavigationBarItem(
                 icon: Icon(Icons.person),
-                title: Text("Q/A"),
-                backgroundColor: Colors.red),
+                label: "Q/A",
+                backgroundColor: Colors.red.shade800),
             BottomNavigationBarItem(
                 icon: Icon(Icons.camera),
-                title: Text("Rate us"),
-                backgroundColor: Colors.red),
+                label: "Rate us",
+                backgroundColor: Colors.red.shade800),
           ],
           onTap: (index) {
             setState(() {

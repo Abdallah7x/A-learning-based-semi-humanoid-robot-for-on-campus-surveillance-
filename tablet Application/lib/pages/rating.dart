@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:reviews_slider/reviews_slider.dart';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class ReviewsDemo extends StatefulWidget {
   @override
   _ReviewsDemoState createState() => _ReviewsDemoState();
@@ -34,7 +36,8 @@ class _ReviewsDemoState extends State<ReviewsDemo> {
     return Scaffold(
       backgroundColor: Colors.blueGrey[50],
       appBar: AppBar(
-        backgroundColor: Colors.red,
+        centerTitle: true,
+        backgroundColor: Colors.red.shade800,
         title: Text("Help us improve"),
         automaticallyImplyLeading: false,
       ),
@@ -52,14 +55,14 @@ class _ReviewsDemoState extends State<ReviewsDemo> {
               SizedBox(height: 20),
               ReviewSlider(
                 optionStyle: TextStyle(
-                  color: Colors.red,
+                  color: Colors.red.shade800,
                   fontWeight: FontWeight.bold,
                 ),
                 onChange: onChange1,
               ),
               Text(
                 selectedValue1.toString(),
-                style: TextStyle(color: Colors.red),
+                style: TextStyle(color: Colors.red.shade800),
               ),
               SizedBox(height: 20),
               Text(
@@ -93,6 +96,15 @@ class _ReviewsDemoState extends State<ReviewsDemo> {
               ),
               Text(selectedValue3.toString(),
                   style: TextStyle(color: Colors.black)),
+              ElevatedButton(
+                  onPressed: () {
+                    FirebaseFirestore.instance.collection('rating').add({
+                      'q1': selectedValue1,
+                      'q2': selectedValue2,
+                      'q3': selectedValue3,
+                    });
+                  },
+                  child: Text("data"))
             ],
           ),
         ),
