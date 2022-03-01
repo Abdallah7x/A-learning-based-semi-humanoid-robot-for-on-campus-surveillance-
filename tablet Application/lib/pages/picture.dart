@@ -8,11 +8,12 @@ class picture extends StatefulWidget {
 }
 
 class _picture extends State<picture> {
-  File? file;
+  File _file;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: Colors.red.shade800,
@@ -26,20 +27,32 @@ class _picture extends State<picture> {
                 children: [
                   Column(
                     children: [
+                      SizedBox(
+                        height: 50,
+                      ),
                       ElevatedButton(
                         style: ButtonStyle(
                           backgroundColor:
                               MaterialStateProperty.all(Colors.red.shade800),
+                          padding:
+                              MaterialStateProperty.all(EdgeInsets.all(18)),
                         ),
-                        child: Text('Take picture'),
+                        child: Text('Take a picture'),
                         onPressed: () {
                           pickercamera();
                         },
                       ),
-                      Center(
-                          child: file == null
-                              ? Text("no image uploaded")
-                              : Text("uploaded")),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Container(
+                        height: 500,
+                        width: 500,
+                        child: Center(
+                            child: _file == null
+                                ? Text("no image uploaded")
+                                : Image.file(_file)),
+                      )
                     ],
                   ),
                 ],
@@ -52,7 +65,7 @@ class _picture extends State<picture> {
   Future pickercamera() async {
     final myfile = await ImagePicker().pickImage(source: ImageSource.camera);
     setState(() {
-      file = File(myfile!.path);
+      _file = File(myfile.path);
     });
   }
 }
