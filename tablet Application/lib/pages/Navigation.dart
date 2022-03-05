@@ -12,8 +12,8 @@ class _navigationState extends State<navigation> {
   List<dynamic> statemasters = [];
   List<dynamic> state = [];
 
-  String? buildingid;
-  String? stateid;
+  String buildingid;
+  String stateid;
   @override
   void initState() {
     super.initState();

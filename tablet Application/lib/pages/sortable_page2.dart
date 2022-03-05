@@ -13,8 +13,8 @@ class SortablePage2 extends StatefulWidget {
 }
 
 class _SortablePage2State extends State<SortablePage2> {
-  late List<User> users;
-  int? sortColumnIndex;
+  List<User> users;
+  int sortColumnIndex;
   bool isAscending = false;
   void _doSomething() {
     showAlertDialog(context);
@@ -98,7 +98,6 @@ class _SortablePage2State extends State<SortablePage2> {
 
   showAlertDialog(BuildContext context) {
     Widget okButton = TextButton(
-      child: Text("Add to log file"),
       onPressed: () {
         Navigator.push(
           context,
@@ -109,7 +108,7 @@ class _SortablePage2State extends State<SortablePage2> {
 
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
-      backgroundColor: Color.fromRGBO(255, 255, 255, 0.55),
+      backgroundColor: Color.fromARGB(139, 206, 28, 28),
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(32.0))),
       contentPadding: EdgeInsets.only(top: 10.0),

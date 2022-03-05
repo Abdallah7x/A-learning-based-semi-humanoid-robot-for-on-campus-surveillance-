@@ -51,7 +51,7 @@ class CustomSearch extends SearchDelegate {
   List<String> sugg = ['Navigation', 'schedule'];
 
   @override
-  List<Widget>? buildActions(BuildContext context) {
+  List<Widget> buildActions(BuildContext context) {
     return [
       IconButton(
           onPressed: () {
@@ -62,7 +62,7 @@ class CustomSearch extends SearchDelegate {
   }
 
   @override
-  Widget? buildLeading(BuildContext context) {
+  Widget buildLeading(BuildContext context) {
     return IconButton(
         onPressed: () {
           close(context, null);

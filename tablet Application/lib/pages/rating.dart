@@ -9,9 +9,9 @@ class ReviewsDemo extends StatefulWidget {
 }
 
 class _ReviewsDemoState extends State<ReviewsDemo> {
-  int? selectedValue1;
-  int? selectedValue2;
-  int? selectedValue3;
+  int selectedValue1;
+  int selectedValue2;
+  int selectedValue3;
 
   void onChange1(int value) {
     setState(() {
@@ -104,7 +104,7 @@ class _ReviewsDemoState extends State<ReviewsDemo> {
                       'q3': selectedValue3,
                     });
                   },
-                  child: Text("data"))
+                  child: Text("Submit"))
             ],
           ),
         ),

@@ -13,8 +13,8 @@ class SortablePage3 extends StatefulWidget {
 }
 
 class _SortablePage3State extends State<SortablePage3> {
-  late List<User> users;
-  int? sortColumnIndex;
+  List<User> users;
+  int sortColumnIndex;
   bool isAscending = false;
   void _doSomething() {
     showAlertDialog(context);
@@ -98,7 +98,6 @@ class _SortablePage3State extends State<SortablePage3> {
 
   showAlertDialog(BuildContext context) {
     Widget okButton = TextButton(
-      child: Text("Add to log file"),
       onPressed: () {
         Navigator.push(
           context,
@@ -109,13 +108,13 @@ class _SortablePage3State extends State<SortablePage3> {
 
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
-      backgroundColor: Color.fromRGBO(255, 255, 255, 0.55),
+      backgroundColor: Color.fromARGB(139, 206, 28, 28),
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(32.0))),
       contentPadding: EdgeInsets.only(top: 10.0),
       title: CircleAvatar(
         radius: 65,
-        backgroundColor: Colors.red.shade800,
+        backgroundColor: Color.fromARGB(255, 230, 19, 19),
         child: Padding(
           padding: const EdgeInsets.all(4), // Border radius
           child: ClipOval(child: Image.asset('assets/logo/miul.png')),

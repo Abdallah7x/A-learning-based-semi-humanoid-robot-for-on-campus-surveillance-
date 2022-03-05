@@ -3,6 +3,7 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:tablet/pages/Navigation.dart';
 import 'package:clay_containers/clay_containers.dart';
 import 'package:tablet/pages/picture.dart';
+import 'package:tablet/pages/tick.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -17,6 +18,11 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red.shade800,
+        title: Image.asset(
+          "assets/logo/miu-logo.jpg",
+          width: 120,
+          height: 55,
+        ),
       ),
       body: Align(
         alignment: Alignment.centerLeft,
@@ -186,8 +192,7 @@ class _HomePageState extends State<HomePage> {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => navigation()),
+                            MaterialPageRoute(builder: (context) => MainPage()),
                           );
                         },
                         child: Column(
