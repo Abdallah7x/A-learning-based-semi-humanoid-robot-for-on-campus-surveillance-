@@ -2,32 +2,32 @@ import 'package:tablet/model/user.dart';
 
 final allUsers = <User>[
   User(
-      firstName: 'adel ahmed',
+      firstName: 'Seif ahmed',
       ID: '2018/1xxx',
       Ticketdate: "25/1/2022",
       Tickettype: "Fighting"),
   User(
-      firstName: 'asmaa zozoo',
+      firstName: 'Seif ahmed',
       ID: '2018/1xxx',
       Ticketdate: "5/7/2022",
       Tickettype: "Fighting"),
   User(
-      firstName: 'hossam tarek ali',
+      firstName: 'Seif ahmed',
       ID: '2018/1xxx',
       Ticketdate: "5/7/2022",
       Tickettype: "Fighting"),
   User(
-      firstName: 'zaki fathi',
+      firstName: 'Seif ahmed',
       ID: '2018/1xxx',
       Ticketdate: "5/7/2022",
       Tickettype: "Fighting"),
   User(
-      firstName: 'Hassab omar',
+      firstName: 'Seif ahmed',
       ID: '2018/1xxx',
       Ticketdate: "5/7/2022",
       Tickettype: "Fighting"),
   User(
-      firstName: 'salma tamer',
+      firstName: 'Seif ahmed',
       ID: '2018/1xxx',
       Ticketdate: "5/7/2022",
       Tickettype: "Fighting"),
@@ -40,12 +40,12 @@ final allUsers2 = <User>[
       Ticketdate: "25/2/2022",
       Tickettype: "Smoking"),
   User(
-      firstName: 'Fares awad',
+      firstName: 'Seif ahmed',
       ID: '2018/1xxx',
       Ticketdate: "25/2/2022",
       Tickettype: "Smoking"),
   User(
-      firstName: 'safi rostom',
+      firstName: 'Seif ahmed',
       ID: '2018/1xxx',
       Ticketdate: "25/2/2022",
       Tickettype: "Smoking"),
@@ -53,29 +53,29 @@ final allUsers2 = <User>[
 
 final allUsers3 = <User>[
   User(
-    firstName: 'Abdallah khyrat',
+    firstName: 'Seif ahmed',
     ID: '2018/1xxx',
     Ticketdate: "20/2/2022",
     Tickettype: "Playing cards",
   ),
   User(
-    firstName: 'Ahmed  zaki',
+    firstName: 'Seif ahmed',
     ID: '2018/1xxx',
     Ticketdate: "30/12/2022",
     Tickettype: "Playing cards",
   ),
   User(
-      firstName: 'Alaa sayed',
+      firstName: 'Seif ahmed',
       ID: '2018/1xxx',
       Ticketdate: "22/4/2022",
       Tickettype: "Playing cards"),
   User(
-      firstName: 'sameh shokry',
+      firstName: 'Seif ahmed',
       ID: '2018/1xxx',
       Ticketdate: "22/3/2022",
       Tickettype: "Playing cards"),
   User(
-      firstName: 'Omar ali',
+      firstName: 'Seif ahmed',
       ID: '2019/1xxx',
       Ticketdate: "10/4/2022",
       Tickettype: "Playing cards"),
