@@ -35,7 +35,7 @@ drive.mount('/content/drive')
 # Commented out IPython magic to ensure Python compatibility.
 # %rm -r darknet
 !git clone https://github.com/pjreddie/darknet
-# %cd darknet/
+# %cd darknet
 
 """**Modify Version of Darknet**"""
 
