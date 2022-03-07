@@ -69,6 +69,7 @@ flutter:
     - assets/images/img2.jpg
     - assets/images/img3.jpg
     - assets/images/picture.jpg
+    - assets/images/pngtree-simple-background-of-multiple-color-gradient-app-interface-materials-png-image_392301.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
