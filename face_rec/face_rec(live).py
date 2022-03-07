@@ -7,6 +7,57 @@ import numpy as np
 from time import sleep
 
 
+
+def imagename():
+    vid = cv2.VideoCapture(0)
+  
+cam = cv2.VideoCapture(0)
+
+cv2.namedWindow("test")
+
+img_counter = 0
+cascPath=os.path.dirname(cv2.__file__)+"/data/haarcascade_frontalface_default.xml"
+faceCascade = cv2.CascadeClassifier(cascPath)
+
+while True:
+    ret, frame = cam.read()
+    if not ret:
+        print("failed to grab frame")
+        break
+    
+
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+    faces = faceCascade.detectMultiScale(
+        gray,
+        scaleFactor=1.1,
+        minNeighbors=5,
+        minSize=(30, 30),
+        flags=cv2.CASCADE_SCALE_IMAGE
+    )
+
+    for (x, y, w, h) in faces:
+        cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 0, 0), 2)
+
+    cv2.imshow("test", frame)
+
+    k = cv2.waitKey(1)
+    if k%256 == 27:
+        print("Escape hit, closing...")
+        break
+    elif k%256 == 32:
+        img_name = "opencv_frame_{}.png".format(img_counter)
+        cv2.imwrite(img_name, frame)
+        x=img_name
+        
+        print("{} written!".format(img_name))
+        img_counter += 1
+
+cam.release()
+
+cv2.destroyAllWindows()
+
+
 def get_encoded_faces():
     """
 
@@ -49,11 +100,9 @@ def rec_face(im):
 
     face_names = []
     for face_encoding in unknown_face_encodings:
-        # See if the face is a matches
         matches = face_recognition.compare_faces(faces_encoded, face_encoding)
         name = "Unknown"
 
-        # use the known face with the smallest distance to the new face
         face_distances = face_recognition.face_distance(faces_encoded, face_encoding)
         best_match_index = np.argmin(face_distances)
         if matches[best_match_index]:
@@ -62,15 +111,17 @@ def rec_face(im):
         face_names.append(name)
         
         
-            # Draw box
 
         for (top, right, bottom, left), name in zip(face_locations, face_names):
-            cv2.rectangle(img, (left-20, top-20), (right+20, bottom+20), (0, 255, 255), 2)
-
-            # Draw label 
-            cv2.rectangle(img, (left-20, bottom -15), (right+60, bottom+20), (0, 255, 255), cv2.FILLED)
+# =============================================================================
+#             cv2.rectangle(img, (left-20, top-20), (right+20, bottom+20), (0, 255, 255), 2)
+# 
+# =============================================================================
+            cv2.rectangle(img, (left-20, bottom -15), (right+60, bottom+20), (0, 0, 0), cv2.FILLED)
             font = cv2.FONT_HERSHEY_DUPLEX
             cv2.putText(img, name, (left -20, bottom + 15), font, 1.0, (255, 255, 255), 2)
+            print("username:" + name)
+
 
 
     x=True
@@ -84,19 +135,8 @@ def rec_face(im):
         
         
 if __name__ == "__main__": 
-     
-    directory = "C:/Users/Dell/Desktop/Grad/face_rec/testing"
-    files = os.listdir(directory)
-    for file in files:
-        print(directory+'/'+file)
-        print(rec_face(directory+'/'+file))
+    print(rec_face(img_name))
+    
 
-#            x=True
-#     while x==True:
-
-#         cv2.imshow('face', img)
-#         if cv2.waitKey(0) & 0xFF == ord('q'):
-#             return face_names 
-#         x=False
-#         cv2.destroyAllWindows()
+        
  
