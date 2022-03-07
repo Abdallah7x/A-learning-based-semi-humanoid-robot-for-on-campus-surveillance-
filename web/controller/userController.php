@@ -10,10 +10,10 @@ if (isset($_POST['butsub'])){
   addmissionemployment();
 }
 
-if (isset($_POST['AcceptStudent'])){
+if (isset($_POST['Accept'])){
   acceptStudent();
 }
-if (isset($_POST['newStudent'])){
+if (isset($_POST['new'])){
   newStudent();
 }
 
@@ -24,7 +24,7 @@ function loginController(){
   $_SESSION["name"]=$row['fname']." ".$row['mname']." ".$row['lname'];
   $_SESSION['userID']=$row['userID'];
   echo $row["PageName"];
-  header("Location:../SSC front end/profile.php");
+  header("Location:../front end/profile.php");
 }
 
 function addmissionemployment(){
@@ -47,14 +47,14 @@ function getAcceptUser($uid){
   $row= mysqli_fetch_array($results);
   return $row;
 }
-
+/*
 function acceptStudent(){
 $Users = new usersModel;
 $result = $Users->acceptAddmission($_POST['uid'],$_POST['ut'],$_POST["username"],$_POST["password"]);
 if($_POST['ut']==5){header("Location: /SE/SSC front end/employees.php");}
 else if($_POST['ut']==2){header("Location:/SE/SSC front end/accept-decline.php");}
 }
-
+*/
 function newStudent(){
   $Users = new usersModel;
   $Users->userFName=$_POST["fname"];
@@ -68,9 +68,4 @@ function newStudent(){
   $Users->AddUsers();
   header("Location:front end/index.html");
 }
-
-
-
-
-
 ?>
