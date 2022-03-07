@@ -20,7 +20,7 @@ ls
 
 """To access Google Drive Folder and Files"""
 
-# Load the Drive helper and mount to 
+# Load the Drive helper and mount to  uplo
 from google.colab import drive
 
 # This will prompt for authorization.
