@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/github/hardik0/Deep-Learning-with-GoogleColab/blob/master/Darknet_YOLOv3_Cigarette_Smoking_Detection.ipynb
 
 Cigarette Smoking detection using YOLOv3 darknet
----
+--
 """
 
 !apt update
