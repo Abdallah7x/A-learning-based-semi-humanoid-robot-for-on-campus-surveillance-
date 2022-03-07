@@ -20,7 +20,7 @@ ls
 
 """To access Google Drive Folder and Files"""
 
-# Load the Drive helper and mount
+# Load the Drive helper and mount to 
 from google.colab import drive
 
 # This will prompt for authorization.
