@@ -70,6 +70,25 @@ flutter:
     - assets/images/img3.jpg
     - assets/images/picture.jpg
     - assets/images/pngtree-simple-background-of-multiple-color-gradient-app-interface-materials-png-image_392301.jpg
+  fonts:
+    - family: Karla
+      fonts:
+        - asset: font/Karla-Regular.ttf
+          # - asset: fonts/Schyler-Italic.ttf
+    # - family: Schyler
+    #   fonts:
+    #     - asset: fonts/Schyler-Regular.ttf
+    #     - asset: fonts/Schyler-Italic.ttf
+    #       style: italic
+    # - family: TrajanPro
+    #   fonts:
+    #     - asset: fonts/TrajanPro.ttf
+    #     - asset: fonts/TrajanPro_Bold.ttf
+    #       weight: 700
+    - family: DancingScript
+      fonts:
+        - asset: font/DancingScript-Bold.ttf
+          weight: 700
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
