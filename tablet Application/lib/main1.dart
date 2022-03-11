@@ -1,8 +1,11 @@
+import 'package:tablet_app/screens/admin_dashboard.dart';
 
 import 'screens/constants.dart';
 //import 'package:auth_screen/signin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:tablet_app/screens/home.dart';
+import 'package:tablet_app/screens/admin_dashboard.dart';
+
 
 
 void main() => runApp(MyApp());
@@ -15,17 +18,17 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.dark,
         primaryColor: kPrimaryColor,
-        scaffoldBackgroundColor: kBackgroundColor,
+        scaffoldBackgroundColor: kBackgroundColor.withOpacity(0.1),
         textTheme: TextTheme(
-          headline4: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          headline4: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,fontFamily:'Karla'),
           button: TextStyle(color: kPrimaryColor),
           headline3:
-              TextStyle(color: Colors.white, fontWeight: FontWeight.normal),
+              TextStyle(color: Colors.black, fontWeight: FontWeight.bold,fontFamily:'Karla'),
         ),
         inputDecorationTheme: InputDecorationTheme(
           enabledBorder: UnderlineInputBorder(
             borderSide: BorderSide(
-              color: Colors.white.withOpacity(.2),
+              color: Colors.white.withOpacity(0.2),
             ),
           ),
         ),
@@ -37,6 +40,7 @@ class MyApp extends StatelessWidget {
 
 class WelcomeScreen extends StatelessWidget {
   @override
+  
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
@@ -66,13 +70,16 @@ class WelcomeScreen extends StatelessWidget {
           
             
             Container(
-              margin: EdgeInsets.only(left: 280,bottom: 0),
+              margin: EdgeInsets.only(left: 250,bottom: 0),
             child: Align(
               //alignment: Alignment.topLeft,
               
               alignment: Alignment.center,
             child: Image(image:         
-              NetworkImage("https://i.gifer.com/LL5N.gif"),
+              NetworkImage("https://media.giphy.com/media/RJPBinhXAfOYpBtWWN/giphy.gif" ),
+              //https://media.giphy.com/media/S6N46NjySc3YGmGpIl/giphy.gif
+              //https://media.giphy.com/media/RJPBinhXAfOYpBtWWN/giphy.gif
+              //https://i.gifer.com/LL5N.gif
               height: 300,
             ),
             ),
@@ -82,8 +89,9 @@ class WelcomeScreen extends StatelessWidget {
            ),
           ),
           Flexible(
-            child: Column(
+            child: Column(         
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+             
               children: <Widget>[
                 
                 
@@ -99,13 +107,14 @@ class WelcomeScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                   text: TextSpan(
                     children: [
-                      TextSpan(
+                      
+                      // TextSpan(
                         
-                        text: "HI!",
-                        style: Theme.of(context).textTheme.headline4,
-                      ),
+                      //   text: "",
+                      //   style: Theme.of(context).textTheme.headline4,
+                      // ),
                       TextSpan(
-                        text: "Im Pepper Robot!!",
+                        text: "Welcome back, Im Pepper Robot!!",
                         style: Theme.of(context).textTheme.headline3,
                       )
                     ],
@@ -116,7 +125,7 @@ class WelcomeScreen extends StatelessWidget {
            //padding: EdgeInsets.fromLTRB(4, 2, 4, 2),
                decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
-                         color:Color(0x00008B).withOpacity(0.7),
+                         color:Color(0x00008B).withOpacity(1),
                       ),
                  height: 138.0,
                  width: 900,
@@ -131,16 +140,18 @@ class WelcomeScreen extends StatelessWidget {
                 FittedBox(
                   child: GestureDetector(
                   
-                    onTap: () {
+                    onTap: (){
                       Navigator.push(context, MaterialPageRoute(
                         builder: (context) {
-                            return Home();
+                            return Admindashboard();
                         },
-                      ));
+                      )
+                      );
+                      
                     },
                     child: Container(
                       //margin: EdgeInsets.all(30),
-                      margin: EdgeInsets.only(top: 0,left: 220,right:40),
+                      margin: EdgeInsets.only(top: 0,left: 200,right:40),
                       padding:
                           const EdgeInsets.symmetric(horizontal: 45, vertical: 10),
                          
@@ -175,7 +186,7 @@ class WelcomeScreen extends StatelessWidget {
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(
                         builder: (context) {
-                            return WelcomeScreen();
+                            return Home();
                         },
                       ));
                     },
@@ -252,6 +263,7 @@ class WelcomeScreen extends StatelessWidget {
                 
             ),
           ),
+          
         ],
       ),
     );
