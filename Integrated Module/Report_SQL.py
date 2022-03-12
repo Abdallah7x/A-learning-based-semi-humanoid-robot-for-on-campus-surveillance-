@@ -1,5 +1,5 @@
 
-import Detect_From_Frame as DF
+import face_rec as DF
 from datetime import datetime
 import mysql.connector
 # datetime object containing current date and time
