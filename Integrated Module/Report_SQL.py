@@ -3,7 +3,7 @@ import Detect_From_Frame as DF
 from datetime import datetime
 import mysql.connector
 # datetime object containing current date and time
-now = datetime.now()
+
  
 # print("now =", now)
 
@@ -24,6 +24,7 @@ def write_file(data, filename):
         file.write(data)
         
 def report(im , label) :
+    now = datetime.now()
     img = DF.rec_face(im)
     date = now.strftime("%d/%m/%Y")
     time = now.strftime("%H:%M:%S")
@@ -33,10 +34,11 @@ def report(im , label) :
     user="root",
     password="",
     database="robot")
+    name="Pierre1805213"
     mycursor = mydb.cursor()
     
-    sql = "INSERT INTO ticket (Pic,Behaviour,Date,Time) VALUES (%s, %s,%s,%s)"
-    val = (empPicture, label, date, time)
+    sql = "INSERT INTO ticket (action,image,Date,Time,users) VALUES (%s, %s,%s,%s,%s)"
+    val = ( label,empPicture, date, time, name)
     mycursor.execute(sql, val)
 
     mydb.commit()
