@@ -108,7 +108,7 @@ class _SortablePageState extends State<SortablePage> {
 
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
-      backgroundColor: Color.fromARGB(43, 255, 3, 3),
+      backgroundColor: Color.fromARGB(139, 206, 28, 28),
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(32.0))),
       contentPadding: EdgeInsets.only(top: 10.0),
@@ -199,10 +199,44 @@ class _SortablePageState extends State<SortablePage> {
                                 borderRadius:
                                     BorderRadius.circular(20), // Image border
                                 child: SizedBox.fromSize(
-                                  size: Size.fromHeight(150),
+                                  size: Size.fromHeight(140),
                                   // Image radius
-                                  child: Image.asset('assets/images/ss.jpeg',
-                                      fit: BoxFit.cover),
+                                  child: Row(
+                                    children: [
+                                      Column(
+                                        children: [
+                                          Text("student:"),
+                                          Image.asset(
+                                            'assets/images/seif.jpg',
+                                            width: 125,
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      Container(
+                                        color: Colors.black,
+                                        height: 200,
+                                        width: 2.2,
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      Column(
+                                        children: [
+                                          Text(
+                                            "Capture:",
+                                            textAlign: TextAlign.left,
+                                          ),
+                                          Image.asset(
+                                            'assets/images/ss.jpeg',
+                                            width: 130,
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ],
