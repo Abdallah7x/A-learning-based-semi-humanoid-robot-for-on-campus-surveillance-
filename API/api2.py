@@ -71,7 +71,7 @@ def nameRoute():
         
         encodeListKnown = findEncodings(images)
         print('Encodings Complete')
-        cap = cv2.VideoCapture(0)
+        cap = cv2.VideoCapture('https:192.168.1.3:8080/video')
         
         
         while True:
@@ -119,4 +119,5 @@ def nameRoute():
         return jsonify({'name' : response}) #sending data back to your frontend app
 
 if __name__ == "__main__":
-    app.run(debug=True)
+     app.debug = True
+     app.run(host="0.0.0.0")
