@@ -3,6 +3,9 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:tablet/pages/Navigation.dart';
 import 'package:clay_containers/clay_containers.dart';
 import 'package:tablet/pages/picture.dart';
+import 'package:tablet/pages/sched2.dart';
+import 'package:tablet/pages/schedule.dart';
+import 'package:tablet/pages/test.dart';
 import 'package:tablet/pages/tick.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,10 +21,14 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red.shade800,
-        title: Image.asset(
-          "assets/logo/miu-logo.jpg",
-          width: 120,
-          height: 55,
+        title: Row(
+          children: [
+            Image.asset(
+              "assets/logo/miu-logo.jpg",
+              width: 120,
+              height: 55,
+            ),
+          ],
         ),
       ),
       body: Align(
@@ -32,18 +39,18 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                 children: [
                   SizedBox(
-                    width: 35,
+                    width: 40,
                   ),
                   Column(
                     children: [
                       Image.asset(
                         "assets/logo/pp.png",
-                        height: 580,
+                        height: 540,
                       ),
                     ],
                   ),
                   SizedBox(
-                    width: 80,
+                    width: 40,
                   ),
                   Column(
                     children: [
@@ -52,7 +59,7 @@ class _HomePageState extends State<HomePage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => navigation()),
+                                builder: (context) => schedulehome2()),
                           );
                         },
                         child: Column(
@@ -138,7 +145,7 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                   SizedBox(
-                    width: 150,
+                    width: 130,
                   ),
                   Column(
                     children: [
