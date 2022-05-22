@@ -39,7 +39,7 @@ response = ''
 app = Flask(__name__)
 
 #route to entertain our post and get request from flutter app
-@app.route('/name', methods = ['GET', 'POST'])
+@app.route('/namee', methods = ['GET', 'POST'])
 def nameRoute():
 
     #fetching the global response variable to manipulate inside the function
@@ -50,6 +50,7 @@ def nameRoute():
     #checking the request type we get from the app
     if(request.method == 'POST'):
 
+        print("started")
         path = 'C:/Users/Dell/Desktop/Grad/face_rec/training'
         images = []   # LIST CONTAINING ALL THE IMAGES
         className =[]    # LIST CONTAINING ALL THE CORRESPONDING CLASS Names
@@ -71,11 +72,12 @@ def nameRoute():
         
         encodeListKnown = findEncodings(images)
         print('Encodings Complete')
-        cap = cv2.VideoCapture(0)
+        cap = cv2.VideoCapture('https:192.168.1.3:8080/video')
         
         
         while True:
             success, img = cap.read()
+            print(img,success)
             imgS = cv2.resize(img, (0, 0), fx=0.25, fy=0.25)
             imgS = cv2.cvtColor(imgS, cv2.COLOR_BGR2RGB)
             
@@ -118,4 +120,5 @@ def nameRoute():
         return jsonify({'name' : response}) #sending data back to your frontend app
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.debug = True
+    app.run(host="0.0.0.0")
