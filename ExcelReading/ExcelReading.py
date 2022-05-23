@@ -1,17 +1,42 @@
-import sys
-sys.path.insert(0, 'E:/CS/Graduation Project/-A-learning-based-semi-Humanoid-Robot-for-On-campus-Surveillance-main/VoiceCommands')
-import Project_VoiceCommands as vc
+import speech_recognition 
+import pyttsx3 as tts 
 
-# Python program to read an excel file
-# import openpyxl module
-import openpyxl
+#from Project_VoiceCommands import speak as speak
+# =============================================================================
+
+    
+
+
+# =============================================================================
+#                                                                             #
+# =============================================================================
+#-------- SEt Of Definations --------#
+# Defeinations Of Object To Recognize
+
+# Defeinations Of Object To Speak
+engine = tts.init('sapi5')
+voices = engine.getProperty('voices')
+engine.setProperty('voice', voices[1].id)
+engine.setProperty(engine.getProperty('volume'),1.0)
+
+engine.setProperty('rate', 150)     # setting up new voice rate
+rate = engine.getProperty('rate')
+
+
+
+recognizer = speech_recognition.Recognizer()
+# ---------- Def OF function speak to boost the coding progress ----------
+def speak(audio):
+    engine.say(audio)
+    engine.runAndWait()
+
 def ReadFileData_Day (Path , Day ):
     
-    
+    import openpyxl
     
     # Give the location of the file
     try :
-        path = "StudentsData/" +Path+".xlsx"
+        path = "E:/CS/Graduation Project/StudentsData/" +Path+".xlsx"
     
     except (FileNotFoundError, IOError):
         print("Wrong file or file path")
@@ -51,18 +76,19 @@ def ReadFileData_Day (Path , Day ):
         
     
     for i in range(len(CourseName)):
-        print (CourseName[i])
+        speak (CourseName[i])
         
         Timing = CourseTiming[i]
         
         if Timing is None :
+            speak("No Lectures")
             FullTime = "None"
             Starting.append(FullTime)
             Ending.append(FullTime)
             Room.append(FullTime)
-            print ("Start In "+Starting[i])
-            print ("End In "+Ending[i])
-            print ("Room is "+Room[i])
+            # speak("Start In "+Starting[i])
+            # speak ("End In "+Ending[i])
+            # speak ("Room is "+Room[i])
         else :
     
             FullTime = Timing.split("-")
@@ -70,18 +96,21 @@ def ReadFileData_Day (Path , Day ):
             SecondPart = FullTime[1].split("M")
             Ending.append(SecondPart[0]+"M")
             Room.append(SecondPart[1])
-            print ("Start In "+Starting[i])
-            print ("End In "+Ending[i])
-            print ("Room is "+Room[i])
+            speak ("Start In "+Starting[i])
+            speak ("End In "+Ending[i])
+            speak ("Room is "+Room[i])
             
         
         
 def ReadFileData_Time (Path , Day, Time ):
     
+    # Python program to read an excel file
+    # import openpyxl module
+    import openpyxl
     
     # Give the location of the file
     try :
-        path = "E:/CS/Graduation Project/-A-learning-based-semi-Humanoid-Robot-for-On-campus-Surveillance-main/StudentsData/" +Path+".xlsx"
+        path = ""+Path+".xlsx"
     
     except (FileNotFoundError, IOError):
         print("Wrong file or file path")
@@ -170,30 +199,24 @@ def ReadFileData_Time (Path , Day, Time ):
             if first <= time <= last :
                 Flag = True
             if Flag == True :
-                print("You are Busy At This Time Having :-")
-                print(CourseName[i])
-                print ("Start In "+Starting[i])
-                print ("End In "+Ending[i])
-                print("Room"+Room[i])
-                vc.speak("You are Busy At This Time Having :-")
-                vc.speak(CourseName[i])
-                vc.speak ("Starts In "+Starting[i])
-                vc.speak ("Ends In "+Ending[i])
-                vc.speak("Room"+Room[i])
+                speak("You are Busy At This Time Having :-")
+                speak(CourseName[i])
+                speak ("Start In "+Starting[i])
+                speak ("End In "+Ending[i])
+                speak("Room"+Room[i])
                 break
             
             
     if Flag==False: 
-        print("You don't Have Lectures at this time ")
-        vc.speak("You don't Have Lectures at this time ")
+        speak("You don't Have Lectures at this time ")
             
     
         
 
-if __name__ == '__main__':
-    Name="Pierre Malak"
-    day="Sunday"
-    time ="17"
-    #ReadFileData_Day(Name ,day)
+# if __name__ == '__main__':
+#     Name="Pierre Malak"
+#     day="Monday"
+#     time ="12"
+#    # ReadFileData_Day(Name ,day)
       
-    ReadFileData_Time(Name , day, time)
+#     ReadFileData_Time(Name , day, time)
