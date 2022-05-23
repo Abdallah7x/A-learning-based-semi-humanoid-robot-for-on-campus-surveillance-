@@ -4,7 +4,7 @@ import pyttsx3 as tts
 import sys
 import os
 import cv2
-
+from ExcelReading import ReadFileData_Day as Read_Day
 # =============================================================================
 #                                                                             #
 # =============================================================================
@@ -51,9 +51,9 @@ def takeCommand():
   
     except Exception as e:
         print(e)   
-        print("Unable to Recognize your voice.") 
+        speak("Unable to Recognize your voice.. Please repeat.") 
         #speak("Can't Recognize please repeat")
-        s="can't hear"
+        s=takeCommand()
         return s
      
     return query            
@@ -79,6 +79,19 @@ def find_doctor():
     cv2.waitKey(0)
     cv2.destroyAllWindows()
         
+    
+    
+def say_MySchaduel_Day():
+    speak('Here I can Read the schaduel for you')
+    
+    speak('Tell me The Day')
+    
+    Day = takeCommand()
+    
+    Read_Day("Pierre Malak", Day)
+    
+    
+    
         
 def hello():
     speak ("hello ,What can i do for you ?")
@@ -95,22 +108,6 @@ def find_student():
     cv2.waitKey(0)
     cv2.destroyAllWindows()
     
-def find_Day():
-    
-    speak("Tell The day You want to know")
-    # Day=input(takeCommand().capitalize())
-    # speak("I will Print It to you on the screen")
-    # ExR.ReadFileData_Day("Pierre Malak", Day)
-    # #cv2.waitKey(0)
-    
-def find_Time():
-    
-    speak("Tell Me The Day ")
-    # Day=input(takeCommand().capitalize())
-    # speak(" The System will detect The time in 24 hours format")
-    # speak(" Tell me the time in format of 24 hours ")
-    # Time=input(takeCommand().lower)
-    # ExR.ReadFileData_Time("Pierre Malak", Day, Time)
     
 mapings ={"greeting":hello ,
           "empty_spaces": empty_spaces , 
@@ -119,14 +116,12 @@ mapings ={"greeting":hello ,
           "exit": out ,
           "cant_hear":cant_hear ,
           "find_student":find_student,
-          "find_Day":find_Day,
-          "find_Time": find_Time
+          "say_MySchaduel_Day":say_MySchaduel_Day
           }
 
-          
 
 
-
+#assistant = GenericAssistant.load_model('self',model_name="test_model",)
 assistant = GenericAssistant('intents.json', model_name = "test_model",intent_methods=mapings)
 assistant.train_model()
 assistant.save_model()
@@ -134,27 +129,17 @@ assistant.save_model()
             
 
             
-def begin():
+                       
+if __name__ == '__main__':
     # ---------- This Function clear will clean any command before execution of this python file------
     clear = lambda: os.system('cls')
     #--------------------------------#
     clear()
-    img=face_rec.img_name()
-    Name=face_rec.rec_face(img)
-    #print(img)
-    engine.say("Hello "+Name)
-    engine.runAndWait()
-    speak("Here's M i u's  Robot , how can i help you ?")
+    speak("Here's M i u's  Robot , how can i help you?")
     while True:
         
         query = takeCommand().lower()
         assistant.request(query) 
-            
-            
-                       
-if __name__ == '__main__':
-    
-   # begin()
             
              
                 
